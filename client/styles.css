@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#game-container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(5, 60px);
+    gap: 2px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
+.cell.selected {
+    background-color: #add8e6;
+}
+
+.cell.valid-move {
+    background-color: #90ee90;
+}
+
+.cell.player-A {
+    color: blue;
+}
+
+.cell.player-B {
+    color: red;
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#move-history {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#chat-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.own-message {
+    text-align: right;
+    color: blue;
+}
+
+.other-message {
+    text-align: left;
+    color: green;
+}
+
+.message.error {
+    color: red;
+}
+
+.message.success {
+    color: green;
+}
+
+#setup-form {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#setup-form select {
+    margin: 5px;
+    
+}.cell.valid-move {
+    background-color: #90ee90;
+}

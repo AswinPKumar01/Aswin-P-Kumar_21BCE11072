@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess-like Game</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <h1>Chess-like Game</h1>
+
+        <div id="controls">
+            <input type="text" id="game-id" placeholder="Game ID">
+            <button id="create-game">Create Game</button>
+            <button id="join-game">Join Game</button>
+        </div>
+
+<div id="setup-form" style="display: none;">
+    <h2>Game Setup</h2>
+    <div id="player-a-setup">
+        <h3>Player A</h3>
+        <select id="a-char-1"></select>
+        <select id="a-char-2"></select>
+        <select id="a-char-3"></select>
+        <select id="a-char-4"></select>
+        <select id="a-char-5"></select>
+    </div>
+    <div id="player-b-setup">
+        <h3>Player B</h3>
+        <select id="b-char-1"></select>
+        <select id="b-char-2"></select>
+        <select id="b-char-3"></select>
+        <select id="b-char-4"></select>
+        <select id="b-char-5"></select>
+    </div>
+    <button id="submit-setup">Start Game</button>
+</div>
+
+        <div id="game-board"></div>
+
+        <div id="message"></div>
+
+        <div id="move-history">
+            <h3>Move History</h3>
+            <ul id="history-list"></ul>
+        </div>
+
+        <div id="chat-container">
+            <h3>Chat</h3>
+            <div id="chat-messages"></div>
+            <input type="text" id="chat-input" placeholder="Type a message...">
+            <button id="send-message">Send</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
