@@ -72,12 +72,10 @@ function isValidSetup(setup) {
     return setup.length === 5 && new Set(setup).size === 5;
 }
 
-// Call this function when the WebSocket connection is established
 function onConnectionEstablished() {
     showSetupForm();
 }
 
-// Modify the connectToGame function to call onConnectionEstablished
 function connectToGame(action) {
     socket = new WebSocket(`ws://${window.location.host}/ws/${gameId}`);
     socket.onopen = () => {
@@ -178,19 +176,19 @@ function getValidMoves(piece, row, col) {
     const direction = player === 'A' ? 1 : -1;
 
     switch (piece[0]) {
-        case 'P': // Pawn
+        case 'P':
             addMoveIfValid(moves, row + direction, col);
             addMoveIfValid(moves, row, col - 1);
             addMoveIfValid(moves, row, col + 1);
             addMoveIfValid(moves, row - direction, col);
             break;
         case 'H':
-            if (piece[1] === '1') { // Hero1
+            if (piece[1] === '1') { 
                 addMoveIfValid(moves, row + 2 * direction, col);
                 addMoveIfValid(moves, row - 2 * direction, col);
                 addMoveIfValid(moves, row, col - 2);
                 addMoveIfValid(moves, row, col + 2);
-            } else if (piece[1] === '2') { // Hero2
+            } else if (piece[1] === '2') {
                 addMoveIfValid(moves, row + 2 * direction, col + 2);
                 addMoveIfValid(moves, row + 2 * direction, col - 2);
                 addMoveIfValid(moves, row - 2 * direction, col + 2);
@@ -235,7 +233,7 @@ function getMoveDirection(fromRow, fromCol, toRow, toCol) {
     } else if (colDiff === 0) {
         return rowDiff > 0 ? 'F' : 'B';
     } else {
-        // Diagonal moves for Hero2
+
         const vertical = rowDiff > 0 ? 'F' : 'B';
         const horizontal = colDiff > 0 ? 'R' : 'L';
         return vertical + horizontal;
