@@ -1,4 +1,3 @@
-# main.py
 
 from fastapi import FastAPI, WebSocket
 from fastapi.staticfiles import StaticFiles
@@ -7,7 +6,6 @@ from ws_handler import handle_websocket
 
 app = FastAPI()
 
-# Serve static files (client-side code)
 app.mount("/static", StaticFiles(directory="../client"), name="static")
 @app.get("/")
 async def read_root():
